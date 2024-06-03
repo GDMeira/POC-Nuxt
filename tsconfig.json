@@ -15,7 +15,10 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"],
+    "resolveJsonModule": true
   },
+  "include": ["**/*.ts", "**/*.vue", "plugins/vuetify.options.js"],
+  "files": ["shims-vue.d.ts"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
