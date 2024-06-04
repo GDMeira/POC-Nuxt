@@ -1,4 +1,4 @@
-import colors from 'vuetify/es5/util/colors'
+import jsonImporter from 'node-sass-json-importer'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -27,7 +27,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '@/plugins/validator',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -49,28 +51,39 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://localhost:3333',
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
+    optionsPath: '~/plugins/vuetify.options.js',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    standalone: true,
+    postcss: null,
+    transpile: [
+      'screenful',
+      ({ filePath }) => /(\.esm\.js|\.mjs)$/.test(filePath),
+      'vee-validate/dist/rules',
+    ],
+    loaders: {
+      scss: {
+        additionalData: `$url-storage: '${process.env.STORAGE_URL}/${process.env.STORAGE_FOLDER}';`,
+      },
+    },
+    extend(config, ctx) {
+      ctx.loaders.scss.sassOptions = {}
+      ctx.loaders.scss.sassOptions.importer = jsonImporter()
+
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    },
+  },
 }

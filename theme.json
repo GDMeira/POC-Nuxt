@@ -1,0 +1,44 @@
+{
+    "primary-color": "#008821",
+    "secondary-color": "#1E1E1E",
+    "accent-color": "#6DAA01",
+    "error-color": "#FF0000",
+    "info-color": "#0085FF",
+    "success-color": "#6DAA01",
+    "warning-color": "#FFB800",
+    "danger-color": "#D32F2F",
+    "light-color": "#ffffff",
+    "dark-color": "#000000",
+    "base-color": "#f4f7fa",
+    "base-light-color": "#fafafa",
+    "gray-dark-color": "#464d69",
+    "gray-color": "#727891",
+    "gray-light-color": "#a5a7b2",
+    "gray-lighter-color": "#dde6f3",
+    "gradient-color": "linear-gradient(180deg, #008821 0%, #6DAA01 100%)",
+  
+    "loader": "$primary-color",
+  
+    "avatar-background-color": "$primary-color",
+    "avatar-text-color": "$light-color",
+  
+    "base-background-color": "#ffffff",
+    "base-text-color": "#464d69",
+    "base-font-family": "'Open Sans', sans-serif",
+    "base-loader-color": "$primary-color",
+  
+    "sidebar-background-color": "$secondary-color",
+    "sidebar-background-image": "'sidebar-bg.png'",
+    "sidebar-nav-text-color": "$light-color",
+    "sidebar-nav-active-background-color": "$primary-color",
+    "sidebar-nav-active-text-color": "$light-color",
+    "sidebar-nav-hover-background-color": "$light-color",
+    "sidebar-nav-hover-text-color": "$primary-color",
+    "sidebar-nav-submenu-text-color": "$light-color",
+  
+    "header-background-color": "$secondary-color",
+    "header-text-color": "$light-color",
+    "header-menu-background-color": "$primary-color",
+    "header-menu-text-color": "$light-color"
+  }
+  

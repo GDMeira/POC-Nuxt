@@ -15,7 +15,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"],
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "@nuxtjs/vuetify"],
     "resolveJsonModule": true
   },
   "include": ["**/*.ts", "**/*.vue", "plugins/vuetify.options.js"],
