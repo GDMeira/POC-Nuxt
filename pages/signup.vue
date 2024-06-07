@@ -7,6 +7,7 @@
           <v-text-field
             v-model="username" type="text"
             :error-messages="errors" :disabled="isLoading"
+            hint="Nome de usuário"
           >
           </v-text-field>
         </ValidationProvider>
@@ -15,6 +16,7 @@
           <v-text-field
             v-model="email" type="text"
             :error-messages="errors" :disabled="isLoading"
+            hint="Email"
           >
           </v-text-field>
         </ValidationProvider>
@@ -23,6 +25,7 @@
           <v-text-field
             v-model="password" type="password"
             :error-messages="errors" :disabled="isLoading"
+            hint="Senha"
           >
           </v-text-field>
         </ValidationProvider>
@@ -31,6 +34,7 @@
           <v-text-field
             v-model="passwordConfirm" type="password"
             :error-messages="errors" :disabled="isLoading"
+            hint="Confirmação de senha"
           >
           </v-text-field>
         </ValidationProvider>

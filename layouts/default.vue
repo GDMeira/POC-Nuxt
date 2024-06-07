@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app>
     <AppBar />
 
     <v-main>
@@ -15,15 +15,21 @@
 
 <script>
 import Vue from 'vue'
+import { mapGetters } from 'vuex'
 import AppBar from '@/components/AppBar/index.vue'
 export default Vue.extend({
   name: 'DefaultLayout',
+  components: {
+    AppBar
+  },
   data() {
     return {
     }
   },
-  components: {
-    AppBar
+  computed: {
+    ...mapGetters({
+      user: 'users/user'
+    })
   }
 })
 </script>
